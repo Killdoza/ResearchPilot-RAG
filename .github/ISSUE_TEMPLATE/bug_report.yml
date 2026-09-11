@@ -1,0 +1,55 @@
+name: Bug 报告
+description: 报告可复现的功能、检索、引用或界面问题
+title: "[Bug] "
+labels: ["bug"]
+body:
+  - type: markdown
+    attributes:
+      value: "请勿粘贴 API Key、受限论文正文、私人会话或未脱敏 Trace。"
+  - type: input
+    id: version
+    attributes:
+      label: 版本或 Commit
+      placeholder: product-rc2 / commit SHA
+    validations:
+      required: true
+  - type: textarea
+    id: steps
+    attributes:
+      label: 复现步骤
+      description: 请提供最小、可重复的操作顺序。
+    validations:
+      required: true
+  - type: textarea
+    id: expected
+    attributes:
+      label: 期望行为
+    validations:
+      required: true
+  - type: textarea
+    id: actual
+    attributes:
+      label: 实际行为与脱敏日志
+    validations:
+      required: true
+  - type: dropdown
+    id: area
+    attributes:
+      label: 问题范围
+      options:
+        - PDF 解析与分块
+        - Dense/BM25/RRF/Rerank
+        - 回答、Claim 与 Citation
+        - 记忆、批注与研究笔记
+        - Streamlit
+        - FastAPI/Docker/CI
+        - 其他
+    validations:
+      required: true
+  - type: checkboxes
+    id: privacy
+    attributes:
+      label: 数据确认
+      options:
+        - label: 我已移除密钥、私人数据和受限论文正文
+          required: true

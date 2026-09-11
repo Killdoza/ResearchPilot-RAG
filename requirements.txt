@@ -1,0 +1,25 @@
+# Frozen from the legacy virtual environment on 2026-08-11.
+# Tested with Python 3.13.5. Install into a clean virtual environment.
+jieba==0.42.1
+pdfplumber==0.11.9
+pypdfium2==5.6.0
+Pillow==12.1.1
+docling==2.120.2
+streamlit==1.55.0
+websocket-client==1.9.0
+langchain-chroma==1.1.0
+langchain-core==1.2.19
+langchain-huggingface==1.2.1
+langchain-openai==1.1.11
+langchain-text-splitters==1.1.1
+rank-bm25==0.2.2
+bm25s==0.2.14
+sentence-transformers==5.3.0
+chromadb==1.5.9
+python-dotenv==1.2.2
+PyYAML==6.0.3
+fastapi==0.115.12
+uvicorn==0.41.0
+pytest==8.3.5
+ruff==0.9.10
+python-multipart==0.0.20

@@ -1,0 +1,17 @@
+cff-version: 1.2.0
+message: "If you use ResearchPilot-RAG in academic work, please cite this repository."
+title: "ResearchPilot-RAG"
+type: software
+version: "1.1.0"
+date-released: "2026-09-11"
+repository-code: "https://github.com/Killdoza/ResearchPilot-RAG"
+url: "https://github.com/Killdoza/ResearchPilot-RAG"
+authors:
+  - family-names: "Killdoza"
+license: MIT
+keywords:
+  - retrieval-augmented generation
+  - scientific document understanding
+  - information retrieval
+  - citation grounding
+  - AI papers

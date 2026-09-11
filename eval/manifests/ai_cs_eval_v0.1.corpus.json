@@ -1,0 +1,96 @@
+{
+  "schema_version": "ai_cs_corpus_v0.1",
+  "description": "AI/CS 开放获取论文评测语料 v0.1。每篇论文的本地文件名、来源和 SHA-256 已冻结；原始 PDF 仅保存在 Git 忽略目录 data/raw/ai_cs_eval_v0.1/。",
+  "papers": [
+    {
+      "paper_key": "resnet_2015",
+      "title": "Deep Residual Learning for Image Recognition",
+      "area": "computer_vision",
+      "year": 2015,
+      "source_url": "https://arxiv.org/abs/1512.03385",
+      "local_filename": "2015_Deep_Residual_Learning_for_Image_Recognition.pdf",
+      "sha256": "1e0651b6810ecba34a3dbc5b5b0209226f889004607c1f203540a48d64e5a93a"
+    },
+    {
+      "paper_key": "transformer_2017",
+      "title": "Attention Is All You Need",
+      "area": "nlp_llm",
+      "year": 2017,
+      "source_url": "https://arxiv.org/abs/1706.03762",
+      "local_filename": "2017_Attention_Is_All_You_Need.pdf",
+      "sha256": "bdfaa68d8984f0dc02beaca527b76f207d99b666d31d1da728ee0728182df697"
+    },
+    {
+      "paper_key": "ppo_2017",
+      "title": "Proximal Policy Optimization Algorithms",
+      "area": "reinforcement_learning",
+      "year": 2017,
+      "source_url": "https://arxiv.org/abs/1707.06347",
+      "local_filename": "2017_Proximal_Policy_Optimization_Algorithms.pdf",
+      "sha256": "e78feadadbdbb0b601b3c2bcc81404722cd431a489b307545f9b7bea1e8c4f5b"
+    },
+    {
+      "paper_key": "spectre_2018",
+      "title": "Spectre Attacks: Exploiting Speculative Execution",
+      "area": "computer_security",
+      "year": 2018,
+      "source_url": "https://arxiv.org/abs/1801.01203",
+      "local_filename": "2018_Spectre_Attacks_Exploiting_Speculative_Execution.pdf",
+      "sha256": "f22748bcfddf8c507dae1b4ca7356392579527b3d38d031268e7d94b44d01699"
+    },
+    {
+      "paper_key": "simclr_2020",
+      "title": "A Simple Framework for Contrastive Learning of Visual Representations",
+      "area": "computer_vision",
+      "year": 2020,
+      "source_url": "https://arxiv.org/abs/2002.05709",
+      "local_filename": "2020_A_Simple_Framework_for_Contrastive_Learning_of_Visual_Representations.pdf",
+      "sha256": "e1b10db76adeb0d21a014b9abcf42f6a6af928540c223f010fa1d8c293d9d105"
+    },
+    {
+      "paper_key": "rag_2020",
+      "title": "Retrieval-Augmented Generation for Knowledge-Intensive NLP Tasks",
+      "area": "information_retrieval_rag",
+      "year": 2020,
+      "source_url": "https://arxiv.org/abs/2005.11401",
+      "local_filename": "2020_Retrieval_Augmented_Generation_for_Knowledge_Intensive_NLP_Tasks.pdf",
+      "sha256": "23e3249e9a1e75418d82efecab0ea8c4d033b89c93742f63208d47ce01f21233"
+    },
+    {
+      "paper_key": "ddpm_2020",
+      "title": "Denoising Diffusion Probabilistic Models",
+      "area": "computer_vision",
+      "year": 2020,
+      "source_url": "https://arxiv.org/abs/2006.11239",
+      "local_filename": "2020_Denoising_Diffusion_Probabilistic_Models.pdf",
+      "sha256": "aee5e07a802e8dfd2a386374c94fd61d1d056cb7e1e0fec4f28e8120ff5d8505"
+    },
+    {
+      "paper_key": "lora_2021",
+      "title": "LoRA: Low-Rank Adaptation of Large Language Models",
+      "area": "nlp_llm",
+      "year": 2021,
+      "source_url": "https://arxiv.org/abs/2106.09685",
+      "local_filename": "2021_LoRA_Low_Rank_Adaptation_of_Large_Language_Models.pdf",
+      "sha256": "e9a0d3128767db616085dc0f4e6e455e672e89af823e8ed1282793682787395a"
+    },
+    {
+      "paper_key": "sam_2023",
+      "title": "Segment Anything",
+      "area": "computer_vision",
+      "year": 2023,
+      "source_url": "https://arxiv.org/abs/2304.02643",
+      "local_filename": "2023_Segment_Anything.pdf",
+      "sha256": "c6ca524e47200c3e542587ca76ac1dbc89cc67340f948c819250d16fdbd90cfb"
+    },
+    {
+      "paper_key": "mapreduce_2004",
+      "title": "MapReduce: Simplified Data Processing on Large Clusters",
+      "area": "distributed_systems",
+      "year": 2004,
+      "source_url": "https://research.google/pubs/mapreduce-simplified-data-processing-on-large-clusters/",
+      "local_filename": "2004_MapReduce_Simplified_Data_Processing_on_Large_Clusters.pdf",
+      "sha256": "ae84cc48ff0005c5a79e095039e54e91dce5c116f65746e1593e819d21830ce9"
+    }
+  ]
+}

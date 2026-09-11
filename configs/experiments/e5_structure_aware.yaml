@@ -1,0 +1,29 @@
+schema_version: researchpilot_retrieval_experiment_v1
+name: e5_structure_aware
+description: Docling 结构 Block 与结构感知 Parent-Child 分块；其余检索变量严格复用 E4。
+
+ingestion:
+  parser_name: docling
+  parser_version: "2.120.2"
+  enable_ocr: false
+  chunker_version: structure_aware_v1
+  parent_chunk_size: 1200
+  parent_chunk_overlap: 200
+  child_chunk_size: 300
+  child_chunk_overlap: 50
+
+models:
+  embedding_model: BAAI/bge-small-zh-v1.5
+  reranker_model: BAAI/bge-reranker-base
+  generation_model: null
+
+retrieval:
+  strategy: hybrid_rrf
+  query_expansion: false
+  query_expansion_count: 0
+  dense_limit_per_query: 10
+  bm25_limit_per_query: 10
+  fusion: rrf
+  reranker: true
+  result_limit: 10
+  rrf_k: 60

@@ -1,0 +1,25 @@
+schema_version: researchpilot_product_profile_v1
+name: standard
+label: 标准论文问答
+description: 结构化解析与 RRF 混合检索；不加载 Cross-Encoder，适合较快的事实查询。
+
+ingestion:
+  parser_name: docling
+  parser_version: "2.120.2"
+  fallback_parser_name: pdfplumber
+  fallback_parser_version: "0.11.9"
+  enable_ocr: false
+  chunker_version: structure_aware_v1
+  parent_chunk_size: 1200
+  parent_chunk_overlap: 200
+  child_chunk_size: 300
+  child_chunk_overlap: 50
+
+retrieval:
+  query_expansion: false
+  dense_limit_per_query: 10
+  bm25_limit_per_query: 10
+  fusion: rrf
+  rrf_k: 60
+  reranker_enabled: false
+  result_limit: 10

@@ -1,0 +1,13 @@
+.git
+.venv
+__pycache__
+.pytest_cache
+.ruff_cache
+.env
+data/raw
+data/runtime
+resources
+legacy
+tmp
+*.pdf
+*.sqlite3

@@ -1,0 +1,35 @@
+services:
+  researchpilot-api:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    image: researchpilot-api:local
+    ports:
+      # Demo API stays local by default. Public deployment requires explicit
+      # reverse-proxy authentication/TLS design rather than this Compose file.
+      - "127.0.0.1:8000:8000"
+    env_file:
+      - path: .env
+        required: false
+    environment:
+      # Explicitly forwards a host/user environment variable when the Key is
+      # not stored in the ignored local .env file. The value is never written
+      # to this Compose file or copied into the image.
+      DEEPSEEK_API_KEY: ${DEEPSEEK_API_KEY:-}
+      RESEARCHPILOT_SESSION_CHROMA_DIR: /app/data/runtime/chroma_session
+      RESEARCHPILOT_SPARSE_INDEX_DIR: /app/data/runtime/bm25
+      RESEARCHPILOT_SESSIONS_DIR: /app/data/runtime/sessions
+      RESEARCHPILOT_MEMORY_DB_PATH: /app/data/runtime/researchpilot.sqlite3
+      RESEARCHPILOT_UPLOADS_DIR: /app/data/runtime/uploads
+      RESEARCHPILOT_TRACES_DIR: /app/data/runtime/traces
+    volumes:
+      - researchpilot-runtime:/app/data/runtime
+    healthcheck:
+      test: ["CMD", "python", "-c", "import urllib.request; urllib.request.urlopen('http://127.0.0.1:8000/health')"]
+      interval: 30s
+      timeout: 5s
+      retries: 3
+      start_period: 10s
+
+volumes:
+  researchpilot-runtime:

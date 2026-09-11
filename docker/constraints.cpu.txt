@@ -1,0 +1,4 @@
+# Docker demo runs local embedding/reranking on CPU. Pin CPU wheels so pip
+# does not resolve CUDA-enabled PyTorch and unused NVIDIA runtime libraries.
+torch==2.13.0+cpu
+torchvision==0.28.0+cpu

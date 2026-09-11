@@ -1,0 +1,40 @@
+{
+  "schema_version": "ai_cs_crossdoc_manifest_v0.1",
+  "dataset": "ai_cs_crossdoc_v0.1.jsonl",
+  "dataset_sha256": "be041faa42a4fdd139c7fe7c35bde2c0539c1d5816de95a769b8631cee39f599",
+  "source_markdown": "多论文评测题目.md",
+  "source_markdown_sha256": "7fbef5acc17043da5a4b964d49dca98bec85f65baeea9f8a6d28df921ab06e0b",
+  "base_corpus_manifest": "ai_cs_eval_v0.1.corpus.json",
+  "base_corpus_manifest_sha256": "dd897c1f5c51deab571248ce91b248ff307bbcb2b889cb66f7c1f7703dbe01d9",
+  "paper_splits": {
+    "ddpm_2020": "test",
+    "lora_2021": "dev",
+    "mapreduce_2004": "dev",
+    "ppo_2017": "dev",
+    "rag_2020": "dev",
+    "resnet_2015": "dev",
+    "sam_2023": "test",
+    "simclr_2020": "test",
+    "spectre_2018": "test",
+    "transformer_2017": "dev"
+  },
+  "case_counts": {
+    "total": 15,
+    "dev": 10,
+    "test": 5,
+    "answerable": 12,
+    "unanswerable": 3
+  },
+  "pdf_page_counts": {
+    "ddpm_2020": 25,
+    "lora_2021": 26,
+    "mapreduce_2004": 13,
+    "ppo_2017": 12,
+    "rag_2020": 19,
+    "resnet_2015": 12,
+    "sam_2023": 30,
+    "simclr_2020": 20,
+    "spectre_2018": 16,
+    "transformer_2017": 15
+  }
+}

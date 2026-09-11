@@ -1,0 +1,47 @@
+schema_version: researchpilot_retrieval_experiment_v1
+name: lc1_full_paper
+description: P1-E 单论文全文 Long-context；不执行检索，仅输入该论文全部冻结 E5 Docling Block。
+
+ingestion:
+  parser_name: docling
+  parser_version: "2.120.2"
+  enable_ocr: false
+  chunker_version: structure_aware_v1
+  parent_chunk_size: 1200
+  parent_chunk_overlap: 200
+  child_chunk_size: 300
+  child_chunk_overlap: 50
+
+models:
+  embedding_model: BAAI/bge-small-zh-v1.5
+  reranker_model: null
+  generation_model: null
+
+retrieval:
+  strategy: dense
+  query_expansion: false
+  query_expansion_count: 0
+  dense_limit_per_query: 10
+  bm25_limit_per_query: 0
+  fusion: none
+  reranker: false
+  result_limit: 10
+  rrf_k: 0
+
+answer_evaluation:
+  context_mode: lc1
+  e5_artifact_dir: data/runtime/parsed_blocks/e5_structure_aware
+  parser_name: docling
+  parser_version: "2.120.2"
+  evaluation_scope:
+    user_id: eval_ai_cs_v01_e5
+    session_id: corpus_v01_e5
+  # 不自动截断全文；超限时 Dev 运行会明确失败并记录风险。
+  max_input_tokens: 96000
+  generation:
+    temperature: 0.0
+    max_output_tokens: 1200
+  # 不猜测会随时间变化的 API 价格；填入实际价格后才计算 cost。
+  pricing:
+    input_cost_per_million: null
+    output_cost_per_million: null

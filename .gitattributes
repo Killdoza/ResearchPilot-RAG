@@ -1,0 +1,4 @@
+# Keep text files consistent across Windows, CI and GitHub.
+* text=auto eol=lf
+*.docx binary
+*.pdf binary

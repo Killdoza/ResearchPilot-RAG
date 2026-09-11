@@ -1,0 +1,51 @@
+schema_version: researchpilot_retrieval_experiment_v1
+name: static_e5_a0
+description: P2 静态对照：冻结 E5 结构化解析与 A0 固定 Hybrid RAG，不使用查询路由、跨论文配额或 Coverage Gate。
+
+ingestion:
+  parser_name: docling
+  parser_version: "2.120.2"
+  enable_ocr: false
+  chunker_version: structure_aware_v1
+  parent_chunk_size: 1200
+  parent_chunk_overlap: 200
+  child_chunk_size: 300
+  child_chunk_overlap: 50
+
+models:
+  embedding_model: BAAI/bge-small-zh-v1.5
+  reranker_model: BAAI/bge-reranker-base
+  generation_model: null
+
+retrieval:
+  strategy: hybrid_rrf
+  query_expansion: false
+  query_expansion_count: 0
+  dense_limit_per_query: 10
+  bm25_limit_per_query: 10
+  fusion: rrf
+  reranker: true
+  result_limit: 10
+  rrf_k: 60
+
+p2:
+  mode: static_baseline
+  router_version: none
+  target_paper_resolution: global_topk
+  per_paper_quota: 0
+  coverage_gate: false
+  retry_then_refuse: false
+  max_retries: 0
+  note: 这是 E6 的唯一静态对照；不得用 Streamlit H0 页面链路替代。
+
+answer_evaluation:
+  max_input_tokens: 16000
+  generation:
+    temperature: 0.0
+    max_output_tokens: 1200
+  pricing:
+    input_cost_per_million: null
+    output_cost_per_million: null
+  evaluation_scope:
+    user_id: eval_ai_cs_p2_v02
+    session_id: corpus_v02_e5

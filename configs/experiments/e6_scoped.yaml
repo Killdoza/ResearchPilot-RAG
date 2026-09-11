@@ -1,0 +1,47 @@
+schema_version: researchpilot_retrieval_experiment_v1
+name: e6_scoped
+description: P2 用户 Scope 实验：用户上传、勾选或当前会话明确指定论文范围，Router 不读取评测 Gold 论文范围。
+
+ingestion:
+  parser_name: docling
+  parser_version: "2.120.2"
+  enable_ocr: false
+  chunker_version: structure_aware_v1
+  parent_chunk_size: 1200
+  parent_chunk_overlap: 200
+  child_chunk_size: 300
+  child_chunk_overlap: 50
+models:
+  embedding_model: BAAI/bge-small-zh-v1.5
+  reranker_model: BAAI/bge-reranker-base
+  generation_model: null
+retrieval:
+  strategy: hybrid_rrf
+  query_expansion: false
+  query_expansion_count: 0
+  dense_limit_per_query: 10
+  bm25_limit_per_query: 10
+  fusion: rrf
+  reranker: true
+  result_limit: 10
+  rrf_k: 60
+p2:
+  mode: scoped
+  query_type_source: rule_predicted
+  scope_source: user_selected
+  per_paper_quota: 3
+  coverage_gate: true
+  coverage_gate_minimum_score: 0.15
+  retry_then_refuse: true
+
+answer_evaluation:
+  max_input_tokens: 16000
+  generation:
+    temperature: 0.0
+    max_output_tokens: 1200
+  pricing:
+    input_cost_per_million: null
+    output_cost_per_million: null
+  evaluation_scope:
+    user_id: eval_ai_cs_p2_v02
+    session_id: corpus_v02_e5

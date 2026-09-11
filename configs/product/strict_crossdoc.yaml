@@ -1,0 +1,25 @@
+schema_version: researchpilot_product_profile_v1
+name: strict_crossdoc
+label: 严格跨论文比较（实验性）
+description: 预留给 P2 Evidence-Constrained 流程；Feature Flag 开启前不能降级为普通全局 Top-K。
+
+ingestion:
+  parser_name: docling
+  parser_version: "2.120.2"
+  fallback_parser_name: pdfplumber
+  fallback_parser_version: "0.11.9"
+  enable_ocr: false
+  chunker_version: structure_aware_v1
+  parent_chunk_size: 1200
+  parent_chunk_overlap: 200
+  child_chunk_size: 300
+  child_chunk_overlap: 50
+
+retrieval:
+  query_expansion: false
+  dense_limit_per_query: 12
+  bm25_limit_per_query: 12
+  fusion: rrf
+  rrf_k: 60
+  reranker_enabled: true
+  result_limit: 10

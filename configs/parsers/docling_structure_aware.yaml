@@ -1,0 +1,11 @@
+schema_version: researchpilot_parser_v1
+name: docling_structure_aware
+description: P1-D/E5 使用的文本型学术 PDF 结构解析配置；OCR 不参与主实验。
+parser_name: docling
+parser_version: "2.120.2"
+enable_ocr: false
+pdf_backend: pypdfium2
+torch_compile: false
+table_structure: true
+heading_hierarchy: true
+chunker_version: structure_aware_v1

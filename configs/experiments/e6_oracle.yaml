@@ -1,0 +1,47 @@
+schema_version: researchpilot_retrieval_experiment_v1
+name: e6_oracle
+description: P2 Oracle 上界：仅用于测量 Gold Query Type 与 Gold 论文范围完全正确时，Query-aware 检索策略的理论收益；不得作为产品效果报告。
+
+ingestion:
+  parser_name: docling
+  parser_version: "2.120.2"
+  enable_ocr: false
+  chunker_version: structure_aware_v1
+  parent_chunk_size: 1200
+  parent_chunk_overlap: 200
+  child_chunk_size: 300
+  child_chunk_overlap: 50
+models:
+  embedding_model: BAAI/bge-small-zh-v1.5
+  reranker_model: BAAI/bge-reranker-base
+  generation_model: null
+retrieval:
+  strategy: hybrid_rrf
+  query_expansion: false
+  query_expansion_count: 0
+  dense_limit_per_query: 10
+  bm25_limit_per_query: 10
+  fusion: rrf
+  reranker: true
+  result_limit: 10
+  rrf_k: 60
+p2:
+  mode: oracle
+  query_type_source: oracle_eval
+  scope_source: oracle_eval
+  gold_access: evaluator_only_explicit_oracle_adapter
+  comparison_control: evidence_constrained
+  per_paper_quota: 3
+  coverage_gate_minimum_score: 0.15
+
+answer_evaluation:
+  max_input_tokens: 16000
+  generation:
+    temperature: 0.0
+    max_output_tokens: 1200
+  pricing:
+    input_cost_per_million: null
+    output_cost_per_million: null
+  evaluation_scope:
+    user_id: eval_ai_cs_p2_v02
+    session_id: corpus_v02_e5

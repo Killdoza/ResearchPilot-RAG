@@ -1,0 +1,28 @@
+schema_version: researchpilot_retrieval_experiment_v1
+name: e0_dense
+description: 固定字符 Parent-Child 分块上的纯 Dense 检索基线；不调用 LLM、BM25 或 Reranker。
+
+ingestion:
+  parser_name: pdfplumber
+  parser_version: "0.11.9"
+  chunker_version: page_parent_child_v1
+  parent_chunk_size: 1200
+  parent_chunk_overlap: 200
+  child_chunk_size: 300
+  child_chunk_overlap: 50
+
+models:
+  embedding_model: BAAI/bge-small-zh-v1.5
+  reranker_model: null
+  generation_model: null
+
+retrieval:
+  strategy: dense
+  query_expansion: false
+  query_expansion_count: 0
+  dense_limit_per_query: 10
+  bm25_limit_per_query: 0
+  fusion: none
+  reranker: false
+  result_limit: 10
+  rrf_k: 0

@@ -1,0 +1,28 @@
+schema_version: researchpilot_retrieval_experiment_v1
+name: h0_current_hybrid
+description: 当前产品链路快照；用于记录现状，不等价于路线图中的 E4（尚未实现 RRF 与持久化 BM25）。
+
+ingestion:
+  parser_name: pdfplumber
+  parser_version: "0.11.9"
+  chunker_version: page_parent_child_v1
+  parent_chunk_size: 1200
+  parent_chunk_overlap: 200
+  child_chunk_size: 300
+  child_chunk_overlap: 50
+
+models:
+  embedding_model: BAAI/bge-small-zh-v1.5
+  reranker_model: BAAI/bge-reranker-base
+  generation_model: deepseek-chat
+
+retrieval:
+  strategy: hybrid_union
+  query_expansion: true
+  query_expansion_count: 3
+  dense_limit_per_query: 3
+  bm25_limit_per_query: 3
+  fusion: parent_id_set_union
+  reranker: true
+  result_limit: 3
+  rrf_k: 0

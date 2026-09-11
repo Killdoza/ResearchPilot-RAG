@@ -1,0 +1,45 @@
+schema_version: researchpilot_retrieval_experiment_v1
+name: a0_advanced_rag_e5
+description: P1-E Advanced RAG：Dense + 持久化 BM25 + RRF + BGE Reranker，从冻结 E5 Scope 回答。
+
+ingestion:
+  parser_name: docling
+  parser_version: "2.120.2"
+  enable_ocr: false
+  chunker_version: structure_aware_v1
+  parent_chunk_size: 1200
+  parent_chunk_overlap: 200
+  child_chunk_size: 300
+  child_chunk_overlap: 50
+
+models:
+  embedding_model: BAAI/bge-small-zh-v1.5
+  reranker_model: BAAI/bge-reranker-base
+  generation_model: null
+
+retrieval:
+  strategy: hybrid_rrf
+  query_expansion: false
+  query_expansion_count: 0
+  dense_limit_per_query: 10
+  bm25_limit_per_query: 10
+  fusion: rrf
+  reranker: true
+  result_limit: 10
+  rrf_k: 60
+
+answer_evaluation:
+  context_mode: a0
+  e5_artifact_dir: data/runtime/parsed_blocks/e5_structure_aware
+  parser_name: docling
+  parser_version: "2.120.2"
+  evaluation_scope:
+    user_id: eval_ai_cs_v01_e5
+    session_id: corpus_v01_e5
+  max_input_tokens: 96000
+  generation:
+    temperature: 0.0
+    max_output_tokens: 1200
+  pricing:
+    input_cost_per_million: null
+    output_cost_per_million: null

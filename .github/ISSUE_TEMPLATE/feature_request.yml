@@ -1,0 +1,32 @@
+name: 功能建议
+description: 提议有明确用户价值和验收方式的增强
+title: "[Feature] "
+labels: ["enhancement"]
+body:
+  - type: textarea
+    id: problem
+    attributes:
+      label: 要解决的问题
+      description: 请先描述真实研究任务或失败案例。
+    validations:
+      required: true
+  - type: textarea
+    id: proposal
+    attributes:
+      label: 建议方案
+    validations:
+      required: true
+  - type: textarea
+    id: evaluation
+    attributes:
+      label: 验收与评测方式
+      description: 涉及检索或生成时，请说明数据、对照、指标和错误分析。
+    validations:
+      required: true
+  - type: checkboxes
+    id: boundaries
+    attributes:
+      label: 边界确认
+      options:
+        - label: 我理解新算法、OCR、多模态或 Agent 需要独立评测，不能仅凭 Demo 效果默认启用
+          required: true

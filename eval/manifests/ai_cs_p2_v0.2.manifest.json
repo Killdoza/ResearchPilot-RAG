@@ -1,0 +1,41 @@
+{
+  "case_counts": {
+    "answerable": 20,
+    "comparison_allowed": 0,
+    "dev": 24,
+    "test": 12,
+    "total": 36,
+    "unanswerable": 16
+  },
+  "corpus_manifest": "ai_cs_p2_v0.2.corpus.json",
+  "corpus_manifest_sha256": "3d8ccf684240854f455be7014c680f3621d8cee4b1d5d13e513c3ff927a498b7",
+  "dataset": "ai_cs_p2_v0.2.jsonl",
+  "dataset_sha256": "109daf8aef40278bac298c269788ddbc303e7707576413e87567b20e2367f96a",
+  "paper_splits": {
+    "agile_requirements_2024": "dev",
+    "efficient_rag_2024": "test",
+    "lightrag_2024": "test",
+    "llms_meet_nlp_survey_2024": "dev",
+    "mmt_bench_2024": "test",
+    "r2ag_2024": "dev",
+    "rag_foundry_2024": "dev",
+    "seed_bench_2024": "test",
+    "self_rag_2023": "dev",
+    "vhelm_2024": "dev"
+  },
+  "pdf_page_counts": {
+    "agile_requirements_2024": 17,
+    "efficient_rag_2024": 20,
+    "lightrag_2024": 16,
+    "llms_meet_nlp_survey_2024": 35,
+    "mmt_bench_2024": 83,
+    "r2ag_2024": 13,
+    "rag_foundry_2024": 10,
+    "seed_bench_2024": 10,
+    "self_rag_2023": 30,
+    "vhelm_2024": 36
+  },
+  "schema_version": "ai_cs_p2_manifest_v0.2",
+  "source_markdown": "P2跨论文评测题目_v0.2.md",
+  "source_markdown_sha256": "ce8c5a3860c18ae4cb8d3e2e3ec31edd39789db15334b64fd5943d79b802ada0"
+}

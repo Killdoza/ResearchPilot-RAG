@@ -1,0 +1,41 @@
+schema_version: researchpilot_retrieval_experiment_v1
+name: e6_query_aware_evidence_constrained
+description: P2 E6 候选配置：冻结 E5 解析与模型，仅让 p2_rules_v1 控制检索预算、跨论文均衡召回、Coverage Gate 和一次扩检。
+
+ingestion:
+  parser_name: docling
+  parser_version: "2.120.2"
+  enable_ocr: false
+  chunker_version: structure_aware_v1
+  parent_chunk_size: 1200
+  parent_chunk_overlap: 200
+  child_chunk_size: 300
+  child_chunk_overlap: 50
+
+models:
+  embedding_model: BAAI/bge-small-zh-v1.5
+  reranker_model: BAAI/bge-reranker-base
+  generation_model: null
+
+retrieval:
+  strategy: hybrid_rrf
+  query_expansion: false
+  query_expansion_count: 0
+  dense_limit_per_query: 10
+  bm25_limit_per_query: 10
+  fusion: rrf
+  reranker: true
+  result_limit: 10
+  rrf_k: 60
+
+p2:
+  mode: query_aware_evidence_constrained
+  router_version: p2_rules_v1
+  target_paper_resolution: per_paper_quota
+  per_paper_quota: 3
+  coverage_gate: true
+  minimum_evidence_per_required_paper: 1
+  retry_then_refuse: true
+  max_retries: 1
+  retrieval_limits_are_router_controlled: true
+  note: 当前配置是 P2-A 候选协议；仅能在 Dev 人工复核后冻结为 E6 实验版本。

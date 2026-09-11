@@ -1,0 +1,58 @@
+# Secrets and local environment
+.env
+.env.*
+!.env.example
+*.pem
+*.key
+secrets.toml
+
+# Python, test and Streamlit caches
+.venv/
+venv/
+__pycache__/
+*.py[cod]
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+.coverage
+htmlcov/
+.streamlit/secrets.toml
+
+# Vector stores and local databases
+/chroma_db/
+/chroma_global/
+/chroma_session/
+/chroma_global_vdb/
+/chroma_session_vdb/
+*.sqlite
+*.sqlite3
+*.db
+
+# User uploads, raw papers, generated datasets and model/cache files
+/resources/*
+!/resources/logo.png
+!/resources/full_logo.png
+/sessions/
+/data/raw/
+/data/uploads/
+/data/processed/
+/data/runtime/
+*.pdf
+*.pt
+*.pth
+*.bin
+*.safetensors
+*.onnx
+*.gguf
+/.cache/
+/models/
+
+# IDE and operating-system files
+.idea/
+.vscode/
+*.iml
+.DS_Store
+Thumbs.db
+
+# Local design drafts retained outside the public source tree
+/3.31.docx
