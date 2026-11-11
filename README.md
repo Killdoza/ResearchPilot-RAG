@@ -162,7 +162,7 @@ $env:PYTHONPATH = "src"
 - [2--3 分钟演示脚本](docs/demo_script_v1.1.md)
 - [贡献指南](CONTRIBUTING.md)
 - [安全策略](SECURITY.md)
-
+- [环境自检工具](docs/environment_preflight.md)
 ## 开源协议
 
 本项目使用 [MIT License](LICENSE)。第三方模型、数据集和论文仍分别遵循其原始许可证或使用条款。
