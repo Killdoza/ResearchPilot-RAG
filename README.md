@@ -77,7 +77,7 @@ Evaluation: corpus manifest / JSONL / metrics / ablation / failure audit
 
 ```powershell
 git clone https://github.com/Killdoza/ResearchPilot-RAG.git
-cd ResearchPilot_RAG
+cd ResearchPilot-RAG
 
 py -3.13 -m venv .venv
 .venv\Scripts\python.exe -m pip install --upgrade pip
