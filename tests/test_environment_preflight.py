@@ -1,4 +1,3 @@
-
 """Tests for the environment preflight checker."""
 
 from __future__ import annotations
@@ -11,7 +10,6 @@ from scripts.check_environment import collect_checks
 
 
 class EnvironmentPreflightTests(unittest.TestCase):
-
     def test_supported_environment(self):
         with tempfile.TemporaryDirectory() as tmp:
             root = Path(tmp)
@@ -27,9 +25,7 @@ class EnvironmentPreflightTests(unittest.TestCase):
 
             results = collect_checks((3, 13), root)
 
-            self.assertTrue(
-                all(ok for ok, _ in results)
-            )
+            self.assertTrue(all(ok for ok, _ in results))
 
     def test_wrong_python_version(self):
         with tempfile.TemporaryDirectory() as tmp:

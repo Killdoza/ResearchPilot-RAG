@@ -1,4 +1,3 @@
-
 """Check ResearchPilot-RAG setup requirements."""
 
 from __future__ import annotations
@@ -21,8 +20,7 @@ def collect_checks(
     results = [
         (
             version_ok,
-            f"Python {version[0]}.{version[1]} detected; "
-            "documented version: 3.13",
+            f"Python {version[0]}.{version[1]} detected; documented version: 3.13",
         )
     ]
 
